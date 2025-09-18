@@ -1,7 +1,7 @@
 ## Changelog
 
 ### 2025-06-02 22:11:13
-
+# Version 0.0.1
 **Author:** Cascade (AI Assistant) Gemini 2.5 Pro via Windsurf
 
 **Changes:**
