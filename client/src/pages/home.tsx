@@ -1,117 +1,262 @@
-// File: d:\1Projects\PeekabooWebsite\client\src\pages\home.tsx
-// Author: Cascade (AI Assistant) Gemini 2.5 Pro via Windsurf
-// Date: 2025-06-02
-// Description: This file defines the Home page component for the Peekaboo Interactive Games website.
-// It displays information about the company, its legacy, values, and contact details.
-// This page serves as the main landing page for visitors.
-//
-//
+/**
+ * Author: Sonnet 4
+ * Date: 2025-09-18
+ * PURPOSE: Transformed home page focused on driving App Store installs for Peekaboo Calm and Peekaboo Plunk
+ * SRP and DRY check: Pass - Single responsibility of promoting apps while maintaining educational credibility
+ */
 
-import pigLogoPath from "@assets/IMG_8259.png";
-import pigFarmPath from "@assets/IMG_8260.png";
+import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Heart, Gamepad2, Shield, Sparkles, Star } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
-      {/* Header */}
-      <header className="pt-16 pb-8 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="mb-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-              Legendary Design Meets Modern Innovation
-            </h1>
-            <div className="mb-6">
-              <img 
-                src={pigLogoPath} 
-                alt="Peekaboo Interactive Games - Pig Logo" 
-                className="w-48 h-auto mx-auto rounded-lg shadow-lg"
+    <Layout>
+      {/* Hero Section - Above the Fold */}
+      <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
+            Calm, gentle tap-to-discover apps for toddlers
+          </h1>
+          <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+            Tiny surprises. Soft sounds. No pressure—just peaceful play that delights
+            your little one and gives you moments of calm together.
+          </p>
+
+          {/* App Store Badges - Immediately Visible */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-12">
+            <a
+              href="https://apps.apple.com/us/app/peekaboo-calm/id6748668506"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-6">
+                <Heart className="w-5 h-5 mr-2" />
+                Get Peekaboo Calm
+              </Button>
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/peekaboo-plunk/id6749132469"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <Button size="lg" className="w-full bg-orange-600 hover:bg-orange-700 text-lg py-6">
+                <Gamepad2 className="w-5 h-5 mr-2" />
+                Get Peekaboo Plunk
+              </Button>
+            </a>
+          </div>
+
+          {/* App Icons from App Store */}
+          <div className="flex justify-center gap-8 max-w-lg mx-auto">
+            <div className="text-center">
+              <img
+                src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/07/fe/8a/07fe8a3a-c8bb-4b2c-2ed9-6fe48dcde553/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png"
+                alt="Peekaboo Calm App Icon"
+                className="w-24 h-24 rounded-2xl shadow-lg mx-auto mb-2"
               />
+              <p className="text-sm text-slate-600">Peekaboo Calm</p>
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Welcome to Peekaboo Interactive Games, where the timeless artistry of renowned children's illustrator Brianne Baker lives on through cutting-edge educational technology designed for the next generation.
-            </p>
+            <div className="text-center">
+              <img
+                src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cc/8c/6b/cc8c6bbb-b034-b4dd-c132-97a7fa9c5644/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png"
+                alt="Peekaboo Plunk App Icon"
+                className="w-24 h-24 rounded-2xl shadow-lg mx-auto mb-2"
+              />
+              <p className="text-sm text-slate-600">Peekaboo Plunk</p>
+            </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      {/* Main Content */}
-      <main className="flex-1 px-4 pb-16">
-        <div className="max-w-2xl mx-auto space-y-12">
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">The Brianne Baker Legacy</h2>
-            <div className="my-8 flex justify-center">
-              <img 
-                src={pigFarmPath} 
-                alt="Peekaboo Farm Scene with Pig, Chickens, and Barn" 
-                className="w-full max-w-md h-auto rounded-lg shadow-lg"
-              />
+      {/* Why Parents Like This */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">
+            Why parents choose these gentle experiences
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">Completely private</h3>
+              <p className="text-slate-600">
+                No data collection, no ads, no social features. Works offline.
+                Just pure, safe exploration for your little one.
+              </p>
             </div>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Since 2008, Brianne Baker's distinctive illustrations have defined childhood wonder for millions of families worldwide. Her intuitive understanding of early development, paired with her extraordinary artistic vision, has created some of the most beloved characters in children's digital media. From the gentle farm animals of Peekaboo Barn to the magical forest creatures inspired by Charley Harper's aesthetic, Baker's work transcends mere illustration—it captures the essence of childhood curiosity and transforms it into meaningful learning experiences.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Baker's artistic philosophy centers on respect for developing minds. Every curve, color, and character emerges from deep understanding of what captivates young hearts while supporting cognitive growth. Her geometric precision and vibrant palette create visual experiences that engage without overwhelming, educate without lecturing, and delight without distraction.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">A New Chapter in Educational Excellence</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Peekaboo Interactive Games proudly carries forward this extraordinary creative legacy, breathing new life into beloved classics while maintaining the artistic integrity that has made these apps treasured by educators, therapists, and families globally. Our mission extends beyond preservation—we're reimagining these timeless experiences for modern devices and evolving educational needs.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">Complete Privacy Protection</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              In an era where children's digital privacy has become increasingly precious, we stand as unwavering guardians of safe play experiences. Every app maintains zero data collection, complete offline functionality, and absolute freedom from advertising. Our COPPA-compliant design ensures pure educational exploration that honors childhood development above all else.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">Trusted by Professionals Worldwide</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Our comprehensive collection serves thousands of classrooms, therapy centers, and special education programs. From early intervention specialists to ESL educators, professionals trust our research-based designs to support children with diverse learning needs through engaging, therapeutic interactions.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">Innovation Rooted in Excellence</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              While honoring Brianne Baker's artistic vision, we're pioneering new approaches to educational technology. Our complete app rebuilds utilize cutting-edge frameworks designed for longevity and institutional reliability, ensuring these cherished experiences will serve generations of learners ahead.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-slate-800">Independent Studio Values</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              As a woman-led indie kids educational studio, every creation reflects our dedication to meaningful childhood experiences. We believe exceptional children's technology emerges from love, expertise, and unwavering commitment to developmental appropriateness—not corporate algorithms or market trends.
-            </p>
-          </section>
-
-          <section className="text-center space-y-4 pt-8">
-            <p className="text-md text-slate-600">
-              Legacy information available at <a href="https://www.nightandday.co/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">nightandday.co</a>
-            </p>
-            <p className="text-md text-slate-600">
-              Contact us at <a href="mailto:support@peekaboointeractive.com" className="text-blue-600 hover:text-blue-700 underline">support@peekaboointeractive.com</a> to learn more about institutional licensing and educational partnerships.
-            </p>
-          </section>
+            <div className="text-center">
+              <Heart className="w-12 h-12 text-pink-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">Gentle by design</h3>
+              <p className="text-slate-600">
+                Created by children's artist Brianne Baker with love and care.
+                Soft sounds, calm colors, and peaceful animations.
+              </p>
+            </div>
+            <div className="text-center">
+              <Sparkles className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">Research-backed</h3>
+              <p className="text-slate-600">
+                Designed following early childhood development principles.
+                Trusted by educators and therapists worldwide.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
 
-      {/* Footer */}
-      <footer className="pb-8 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Peekaboo Interactive Games
-            <span className="mx-2">|</span>
-            <a href="/research" className="text-blue-600 hover:text-blue-700 underline">Research</a>
-            <span className="mx-2">|</span>
-            <a href="/privacy" className="text-blue-600 hover:text-blue-700 underline">Privacy Policy</a>
+      {/* Meet the Apps */}
+      <section className="py-16 px-4 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-800 mb-12 text-center">
+            Meet the calming apps
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-lg transition-shadow duration-300 group">
+              <CardHeader className="text-center">
+                <img
+                  src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/07/fe/8a/07fe8a3a-c8bb-4b2c-2ed9-6fe48dcde553/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png"
+                  alt="Peekaboo Calm App Icon"
+                  className="w-20 h-20 rounded-2xl mx-auto mb-4 shadow-lg group-hover:scale-105 transition-transform"
+                />
+                <CardTitle className="text-2xl">Peekaboo Calm</CardTitle>
+                <CardDescription className="text-lg">
+                  Gently discover nature and animals in a soothing, sensory app made for toddlers
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center space-y-4">
+                <p className="text-slate-600">
+                  Peaceful natural backgrounds with animated animal marbles. Calming audio with soft ambient sounds.
+                  No ads, timers, or scoring. Perfect for ages 1-4.
+                </p>
+                <div className="space-y-3">
+                  <a
+                    href="https://apps.apple.com/us/app/peekaboo-calm/id6748668506"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                      Download for $1.99
+                    </Button>
+                  </a>
+                  <a href="/apps/calm">
+                    <Button variant="outline" className="w-full">
+                      Learn More
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300 group">
+              <CardHeader className="text-center">
+                <img
+                  src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cc/8c/6b/cc8c6bbb-b034-b4dd-c132-97a7fa9c5644/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1200x630wa.png"
+                  alt="Peekaboo Plunk App Icon"
+                  className="w-20 h-20 rounded-2xl mx-auto mb-4 shadow-lg group-hover:scale-105 transition-transform"
+                />
+                <CardTitle className="text-2xl">Peekaboo Plunk</CardTitle>
+                <CardDescription className="text-lg">
+                  Watch adorable animals drop down a colorful Galton board filled with pegs
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center space-y-4">
+                <p className="text-slate-600">
+                  A delightful experience designed for toddlers and babies. Animals bounce and giggle along the way
+                  with soothing sounds and music. Safe, encouraging, and replayable fun.
+                </p>
+                <div className="space-y-3">
+                  <a
+                    href="https://apps.apple.com/us/app/peekaboo-plunk/id6749132469"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700">
+                      Download for $1.99
+                    </Button>
+                  </a>
+                  <a href="/apps/plunk">
+                    <Button variant="outline" className="w-full">
+                      Learn More
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Gentle by Design */}
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-8">
+            Gentle by design
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            Every tap, sound, and animation is carefully crafted following early childhood
+            development research. We believe the best experiences for toddlers are calm,
+            predictable, and filled with gentle discoveries—not overstimulating or addictive.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <a href="/why-it-works" className="flex-1">
+              <Button variant="outline" className="w-full">
+                See the Research
+              </Button>
+            </a>
+            <a href="/for-families" className="flex-1">
+              <Button variant="outline" className="w-full">
+                Tips for Families
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call to Action */}
+      <section className="py-16 px-4 bg-gradient-to-b from-blue-50 to-slate-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-800 mb-6">
+            Ready for peaceful play?
+          </h2>
+          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            Join millions of families who have discovered the gentle joy of Peekaboo.
+            Two beautiful experiences, designed with love for the littlest learners.
+          </p>
+
+          {/* Repeated App Store Badges */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <a
+              href="https://apps.apple.com/us/app/peekaboo-calm/id6748668506"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700">
+                <Heart className="w-5 h-5 mr-2" />
+                Get Peekaboo Calm
+              </Button>
+            </a>
+            <a
+              href="https://apps.apple.com/us/app/peekaboo-plunk/id6749132469"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
+              <Button size="lg" className="w-full bg-orange-600 hover:bg-orange-700">
+                <Gamepad2 className="w-5 h-5 mr-2" />
+                Get Peekaboo Plunk
+              </Button>
+            </a>
+          </div>
+
+          <p className="text-sm text-slate-500 mt-6">
+            $1.99 each • No ads • No data collection • Works offline
           </p>
         </div>
-      </footer>
-    </div>
+      </section>
+    </Layout>
   );
 }
