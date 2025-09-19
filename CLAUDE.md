@@ -10,7 +10,7 @@ Every file you create or edit should start with:
  * SRP and DRY check: Pass/Fail Is this file violating either? Do these things already exist in the project?  Did you look??
  
 ## Common Commands
-You need to Git add and commit any changes you make to the codebase.  Be detailed in your commit messages.
+You need to Git add and commit any changes you make to the codebase, as soon as you make them.  Be detailed in your commit messages.
 
 **Project structure:**
 - `client/src/` - React frontend application
